@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/homeFragment"
+        android:icon="@drawable/ic_baseline_home_24"
+        android:title="Inicio" />
+
+    <item
+        android:id="@+id/perfilFragment"
+        android:icon="@drawable/ic_baseline_account_circle_24"
+        android:title="Perfil" />
+
+    <item
+        android:id="@+id/cerrarSesionFragment"
+        android:title="Cerrar sesión" />
+</menu>
