@@ -17,6 +17,7 @@ public class AutenticacionManager {
     public interface RegistrarCallback {
         void cuandoRegistroCompletado();
         void cuandoNombreNoDisponible();
+        
     }
 
     AppBaseDeDatos.AppDao dao;

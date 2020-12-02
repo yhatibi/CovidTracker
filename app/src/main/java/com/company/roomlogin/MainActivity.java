@@ -1,6 +1,7 @@
 package com.company.roomlogin;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import androidx.annotation.NonNull;
@@ -49,8 +50,12 @@ public class MainActivity extends AppCompatActivity {
         navController.addOnDestinationChangedListener(new NavController.OnDestinationChangedListener() {
             @Override
             public void onDestinationChanged(@NonNull NavController controller, @NonNull NavDestination destination, @Nullable Bundle arguments) {
+
+                Log.e("Navegando hacia: ", (String) destination.getLabel());
+
                 if (destination.getId() == R.id.iniciarSesionFragment
-                || destination.getId() == R.id.registroFragment) {
+                || destination.getId() == R.id.registroFragment
+                || destination.getId() == R.id.splashFragment) {
                     binding.toolbar.setVisibility(View.GONE);
                     binding.navView.setVisibility(View.GONE);
                 } else {

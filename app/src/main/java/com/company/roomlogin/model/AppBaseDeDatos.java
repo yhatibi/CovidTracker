@@ -9,7 +9,7 @@ import androidx.room.Query;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
-@Database(entities = {Usuario.class}, version = 1, exportSchema = false)
+@Database(entities = {Usuario.class}, version = 2, exportSchema = false)
 public abstract class AppBaseDeDatos extends RoomDatabase {
 
     public abstract AppDao obtenerDao();
