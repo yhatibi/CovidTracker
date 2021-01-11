@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView((binding = ActivityMainBinding.inflate(getLayoutInflater())).getRoot());
+
         drawerHeaderBinding = DrawerHeaderBinding.bind(binding.navView.getHeaderView(0));
 
         autenticacionViewModel = new ViewModelProvider(this).get(AutenticacionViewModel.class);
