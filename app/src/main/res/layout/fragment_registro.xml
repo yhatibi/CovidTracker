@@ -9,24 +9,28 @@
         android:layout_height="wrap_content"
         android:text="REGISTER"
         android:textSize="24sp" />
+
     <EditText
         android:id="@+id/username"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Username"/>
+        android:hint="Username" />
+
     <EditText
         android:id="@+id/password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Password"/>
+        android:hint="Password" />
+
     <EditText
         android:id="@+id/biography"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Bio"/>
+        android:hint="Bio" />
+
     <Button
         android:id="@+id/registrar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="REGISTRAR"/>
+        android:text="REGISTRAR" />
 </LinearLayout>

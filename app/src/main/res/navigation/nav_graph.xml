@@ -15,7 +15,7 @@
             app:destination="@id/registroFragment" />
         <action
             android:id="@+id/action_iniciarSesionFragment_to_inicioFragment"
-            app:destination="@id/homeFragment" />
+            app:destination="@id/mapsFragment" />
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
@@ -58,4 +58,9 @@
             app:popUpTo="@id/splashFragment"
             app:popUpToInclusive="true" />
     </fragment>
+    <fragment
+        android:id="@+id/mapsFragment"
+        android:name="com.company.roomlogin.MapsFragment"
+        android:label="fragment_maps"
+        tools:layout="@layout/fragment_maps" />
 </navigation>
