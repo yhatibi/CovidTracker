@@ -22,6 +22,7 @@ import com.company.roomlogin.model.Usuario;
 public class MainActivity extends AppCompatActivity {
 
     ActivityMainBinding binding;
+
     DrawerHeaderBinding drawerHeaderBinding;
 
     AutenticacionViewModel autenticacionViewModel;
@@ -44,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
                 .setOpenableLayout(binding.drawerLayout)
                 .build();
 
+
         NavController navController = ((NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment)).getNavController();
         NavigationUI.setupWithNavController(binding.navView, navController);
         NavigationUI.setupWithNavController(binding.toolbar, navController, appBarConfiguration);
@@ -57,13 +59,23 @@ public class MainActivity extends AppCompatActivity {
 
                 if (destination.getId() == R.id.iniciarSesionFragment
                 || destination.getId() == R.id.registroFragment
-                || destination.getId() == R.id.splashFragment
-                || destination.getId() == R.id.mapsFragment) {
-                    binding.toolbar.setVisibility(View.GONE);
+                || destination.getId() == R.id.splashFragment) {
                     binding.navView.setVisibility(View.GONE);
+                    binding.toolbar.setVisibility(View.GONE);
+                    binding.bottomAppBar.setVisibility(View.GONE);
+                    binding.fab.setVisibility(View.GONE);
                 } else {
                     binding.toolbar.setVisibility(View.VISIBLE);
                     binding.navView.setVisibility(View.VISIBLE);
+                    binding.bottomAppBar.setVisibility(View.VISIBLE);
+                    binding.fab.setVisibility(View.VISIBLE);
+
+                }
+
+
+                if ( destination.getId() == R.id.mapsFragment) {
+                    binding.navView.setVisibility(View.GONE);
+                    binding.toolbar.setVisibility(View.GONE);
                 }
             }
         });
@@ -77,6 +89,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
 }
 
 

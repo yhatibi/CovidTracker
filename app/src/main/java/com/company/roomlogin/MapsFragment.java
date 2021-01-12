@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 
 import com.company.roomlogin.databinding.FragmentHomeBinding;
 import com.company.roomlogin.databinding.FragmentMapsBinding;
+import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
@@ -47,8 +48,12 @@ public class MapsFragment extends Fragment  {
     TextView showLocation;
     LocationManager locationManager;
     String latitude, longitude;
+    double lat;
+    double longi;
 
     private FragmentMapsBinding binding;
+    private static final String TAG = MapsFragment.class.getSimpleName();
+
 
     private OnMapReadyCallback callback = new OnMapReadyCallback() {
 
@@ -63,18 +68,38 @@ public class MapsFragment extends Fragment  {
          */
         @Override
         public void onMapReady(GoogleMap googleMap) {
-            LatLng sydney = new LatLng(-34, 151);
-            googleMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-            googleMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+            if (lat > 0) {
+
+                try {
+                    // Customise the styling of the base map using a JSON object defined
+                    // in a raw resource file.
+                    boolean success = googleMap.setMapStyle(
+                            MapStyleOptions.loadRawResourceStyle(
+                                    requireContext(), R.raw.mapstyle));
+
+                    if (!success) {
+                        Log.e(TAG, "Style parsing failed.");
+                    }
+                } catch (Resources.NotFoundException e) {
+                    Log.e(TAG, "Can't find style. Error: ", e);
+                }
+
+                LatLng sydney = new LatLng(lat, longi);
+                googleMap.addMarker(new MarkerOptions().position(sydney).title("Este eres tu!"));
+                googleMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+
+                LatLng coordinate = new LatLng(lat, longi); //Store these lat lng values somewhere. These should be constant.
+                CameraUpdate location = CameraUpdateFactory.newLatLngZoom(
+                        coordinate, 15);
+                googleMap.animateCamera(location);
+            }
+
         }
     };
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         return (binding = FragmentMapsBinding.inflate(inflater, container, false)).getRoot();
-
-
     }
 
 
@@ -82,24 +107,32 @@ public class MapsFragment extends Fragment  {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+
         ActivityCompat.requestPermissions(requireActivity(),
                 new String[] {Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_LOCATION);
 
+       loquesea();
 
-        binding.btnGetLocation.setOnClickListener(v -> {
-            locationManager = (LocationManager) requireActivity().getSystemService(Context.LOCATION_SERVICE);
-            if (!locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
-                OnGPS();
-            } else {
-                getLocation();
-            }
-        });
+//        binding.btnGetLocation.setOnClickListener(v -> {
+//            loquesea();
+//        });
 
 
         SupportMapFragment mapFragment =
                 (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.map);
         if (mapFragment != null) {
             mapFragment.getMapAsync(callback);
+        }
+
+        return;
+    }
+
+    void loquesea() {
+        locationManager = (LocationManager) requireActivity().getSystemService(Context.LOCATION_SERVICE);
+        if (!locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
+            OnGPS();
+        } else {
+            getLocation();
         }
     }
 
@@ -119,6 +152,7 @@ public class MapsFragment extends Fragment  {
         final AlertDialog alertDialog = builder.create();
         alertDialog.show();
     }
+
     private void getLocation() {
         if (ActivityCompat.checkSelfPermission(
                 requireActivity(),Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(
@@ -127,16 +161,19 @@ public class MapsFragment extends Fragment  {
         } else {
             Location locationGPS = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
             if (locationGPS != null) {
-                double lat = locationGPS.getLatitude();
-                double longi = locationGPS.getLongitude();
+                 lat = locationGPS.getLatitude();
+                 longi = locationGPS.getLongitude();
                 latitude = String.valueOf(lat);
                 longitude = String.valueOf(longi);
-                binding.showLocation.setText("Your Location: " + "\n" + "Latitude: " + latitude + "\n" + "Longitude: " + longitude);
+//                binding.showLocation.setText("Your Location: " + "\n" + "Latitude: " + latitude + "\n" + "Longitude: " + longitude);
             } else {
                 Toast.makeText(requireContext(), "Unable to find location.", Toast.LENGTH_SHORT).show();
             }
         }
     }
 
-    
+
+
+
+
 }

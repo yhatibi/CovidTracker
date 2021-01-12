@@ -35,6 +35,7 @@
         tools:ignore="MissingConstraints" />
 
     <EditText
+        android:text="A"
         android:id="@+id/username"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -47,6 +48,7 @@
         tools:layout_editor_absoluteX="24dp" />
 
     <EditText
+        android:text="A"
         android:id="@+id/password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
