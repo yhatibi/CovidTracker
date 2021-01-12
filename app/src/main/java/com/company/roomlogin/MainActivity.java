@@ -57,7 +57,8 @@ public class MainActivity extends AppCompatActivity {
 
                 if (destination.getId() == R.id.iniciarSesionFragment
                 || destination.getId() == R.id.registroFragment
-                || destination.getId() == R.id.splashFragment) {
+                || destination.getId() == R.id.splashFragment
+                || destination.getId() == R.id.mapsFragment) {
                     binding.toolbar.setVisibility(View.GONE);
                     binding.navView.setVisibility(View.GONE);
                 } else {

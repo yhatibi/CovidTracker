@@ -4,5 +4,5 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_maps">Map</string>
     <string name="helloworld">Hello World!</string>
-    <string name="mapbox_access_token">pk.eyJ1IjoieWhhdGliaSIsImEiOiJja2pzd2ZlcnUzc20zMnRxb3l3eTVvZXhsIn0.yCmi7hq3O22ATCpknjs8OQ</string>
+    <string name="google_maps_key">AIzaSyBMYLuymAU6RjzcBHMvJ7zTo9fC19um3yI</string>
 </resources>
