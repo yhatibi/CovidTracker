@@ -1,24 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <item android:id="@+id/miHome"
+    <item android:id="@+id/mapsFragment"
         android:title="Home"
-        android:icon="@drawable/ic_home"
-        android:iconTint="@color/white"/>
+        android:icon="@drawable/ic_virus"
+        
+        android:iconTint="@color/white"
+        />
+
+
+    <item android:id="@+id/perfilFragment"
+        android:title="History"
+        android:icon="@drawable/ic_baseline_history_24" />
 
     <item android:id="@+id/miSearch"
         android:title="Search"
-        android:icon="@drawable/ic_home"
+        android:icon="@drawable/ic_baseline_person_24"
         android:iconTint="@color/white"/>
 
-    <item android:id="@+id/placeholder"
-        android:title="" />
 
-    <item android:id="@+id/miProfile"
-        android:title="Profile"
-        android:icon="@drawable/ic_home" />
-
-    <item android:id="@+id/miSettings"
-        android:title="Settings"
-        android:icon="@drawable/ic_home" />
+    <item android:id="@+id/infoFragment"
+        android:title="Info"
+        android:icon="@drawable/ic_baseline_info_24" />
 </menu>
