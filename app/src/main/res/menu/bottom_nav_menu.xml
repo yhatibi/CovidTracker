@@ -5,20 +5,16 @@
     <item android:id="@+id/mapsFragment"
         android:title="Home"
         android:icon="@drawable/ic_virus"
-        
-        android:iconTint="@color/white"
-        />
+        android:iconTint="@color/white" />
 
-
-    <item android:id="@+id/perfilFragment"
+    <item android:id="@+id/historyFragment"
         android:title="History"
         android:icon="@drawable/ic_baseline_history_24" />
 
-    <item android:id="@+id/miSearch"
+    <item android:id="@+id/perfilFragment"
         android:title="Search"
         android:icon="@drawable/ic_baseline_person_24"
         android:iconTint="@color/white"/>
-
 
     <item android:id="@+id/infoFragment"
         android:title="Info"

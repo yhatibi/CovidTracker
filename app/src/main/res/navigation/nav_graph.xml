@@ -68,4 +68,9 @@
         android:name="com.company.roomlogin.MapsFragment2"
         android:label="fragment_maps2"
         tools:layout="@layout/fragment_maps2" />
+    <fragment
+        android:id="@+id/historyFragment2"
+        android:name="com.company.roomlogin.HistoryFragment"
+        android:label="fragment_history_list"
+        tools:layout="@layout/fragment_history_list" />
 </navigation>

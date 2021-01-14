@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
     PerfilFragment perfilFragment = new PerfilFragment();
     MapsFragment mapsFragment = new MapsFragment();
+    HistoryFragment historyFragment = new HistoryFragment();
     ActivityMainBinding binding;
 
     DrawerHeaderBinding drawerHeaderBinding;
@@ -126,6 +127,11 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.perfilFragment:
                     selectedFragment = new PerfilFragment();
                     break;
+
+                case R.id.historyFragment:
+                    selectedFragment = new HistoryFragment();
+                    break;
+
                 case R.id.infoFragment:
                     selectedFragment = new InfoFragment();
                     break;

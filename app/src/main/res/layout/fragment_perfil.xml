@@ -11,40 +11,74 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="200dp"
-
-            android:padding="50dp"
-            android:background="@drawable/gradient_primary">
+            android:layout_height="250dp"
+            android:background="@color/dark"
+            android:backgroundTint="@color/dark">
 
             <ImageView
-                android:id="@+id/profile_image"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:src="@drawable/chapoteo"
-                android:layout_centerVertical="true" />
-
-            <TextView
-                android:id="@+id/fullname_field"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:backgroundTint="#7581AF"
+                android:scaleType="fitXY"
+                android:background="@drawable/ic_group" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
-                android:layout_marginLeft="10dp"
-                android:layout_toRightOf="@+id/profile_image"
-                android:includeFontPadding="false"
-                android:text="Taimoor Sikander"
-                android:textColor="#000"
-                android:textSize="20sp" />
+                android:layout_marginBottom="24dp">
 
-            <TextView
-                android:id="@+id/username_field"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/fullname_field"
-                android:layout_marginLeft="10dp"
-                android:layout_toRightOf="@+id/profile_image"
-                android:includeFontPadding="false"
-                android:text="taimoor_sikander"
-                android:textSize="14sp" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/view2"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:elevation="12dp"
+                    android:innerRadius="0dp"
+                    android:shape="ring"
+                    android:thicknessRatio="1.9"
+                    app:cardCornerRadius="60dp">
+
+                    <ImageView
+                        android:id="@+id/profile_image"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"
+                        android:src="@mipmap/ic_avatar"></ImageView>
+                </androidx.cardview.widget.CardView>
+
+
+                <TextView
+                    android:id="@+id/username_field"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/fullname_field"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="-7dp"
+                    android:layout_toRightOf="@+id/view2"
+                    android:includeFontPadding="false"
+                    android:text="yhatibi@gmail.com"
+                    android:textColor="#ffff"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/fullname_field"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/view2"
+                    android:includeFontPadding="false"
+                    android:text="Yasin Hatibi"
+                    android:textColor="#FFFF"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+
+            </RelativeLayout>
+
 
         </RelativeLayout>
 
@@ -57,19 +91,26 @@
         <com.google.android.material.card.MaterialCardView
             android:layout_width="0dp"
             android:layout_height="125dp"
-            app:cardBackgroundColor="@color/dark"
+            app:cardBackgroundColor="@color/white"
             app:cardElevation="10dp"
             android:layout_margin="10dp"
             android:layout_weight="1">
 
+            <ImageView
+                android:src="@drawable/gradient_primary"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"/>
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:padding="5dp">
+                android:padding="15dp">
+
                 <ImageView
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:src="@drawable/ic_baseline_home_24"
+                    android:src="@drawable/ic_virus"
                     android:layout_centerHorizontal="true"/>
 
                 <TextView
@@ -77,20 +118,25 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:includeFontPadding="false"
-                    android:text="123"
+                    android:text="Negativo"
+
+                    android:textColor="@color/white"
                     android:textSize="20sp"
                     android:layout_centerInParent="true"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Balance"
+                    android:text="Estado"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
                     android:textSize="14sp"
                     android:layout_below="@id/payment"
                     android:layout_centerHorizontal="true"/>
 
             </RelativeLayout>
         </com.google.android.material.card.MaterialCardView>
+
         <com.google.android.material.card.MaterialCardView
             android:layout_width="0dp"
             android:layout_height="125dp"
@@ -99,14 +145,21 @@
             android:layout_margin="10dp"
             android:layout_weight="1">
 
+            <ImageView
+                android:src="@drawable/gradient_primary"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"/>
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:padding="5dp">
+                android:padding="15dp">
                 <ImageView
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:src="@drawable/ic_baseline_home_24"
+                    android:src="@drawable/ic_home"
+                    android:backgroundTint="@color/white"
                     android:layout_centerHorizontal="true"/>
 
                 <TextView
@@ -114,15 +167,18 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:includeFontPadding="false"
-                    android:text="123"
+                    android:text="Si"
+                    android:textColor="@color/white"
                     android:textSize="20sp"
                     android:layout_centerInParent="true"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Balance"
+                    android:text="Vacunado"
+                    android:textColor="@color/white"
                     android:textSize="14sp"
+                    android:textStyle="bold"
                     android:layout_below="@id/payments"
                     android:layout_centerHorizontal="true"/>
 
@@ -146,10 +202,13 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@color/white"
                 android:drawableLeft="@drawable/ic_baseline_home_24"
                 android:drawablePadding="10dp"
+                android:drawableTint="@color/dark"
                 android:text="Yasin Hatibi"/>
         </com.google.android.material.textfield.TextInputLayout>
+
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -159,10 +218,13 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@color/white"
                 android:drawableLeft="@drawable/ic_baseline_home_24"
                 android:drawablePadding="10dp"
+                android:drawableTint="@color/dark"
                 android:text="Yasin Hatibi"/>
         </com.google.android.material.textfield.TextInputLayout>
+
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -172,18 +234,16 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@color/white"
                 android:drawableLeft="@drawable/ic_baseline_home_24"
+                android:drawableTint="@color/dark"
                 android:drawablePadding="10dp"
                 android:text="Yasin Hatibi"/>
         </com.google.android.material.textfield.TextInputLayout>
 
 
     </LinearLayout>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="PROFILE"
-        android:textSize="24sp"/>
+
     <TextView
         android:id="@+id/username"
         android:layout_width="match_parent"
