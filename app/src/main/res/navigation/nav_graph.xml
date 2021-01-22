@@ -73,4 +73,14 @@
         android:name="com.company.roomlogin.HistoryFragment"
         android:label="fragment_history_list"
         tools:layout="@layout/fragment_history_list" />
+    <fragment
+        android:id="@+id/historyFragment3"
+        android:name="com.company.roomlogin.HistoryFragment"
+        android:label="fragment_history_list"
+        tools:layout="@layout/fragment_history_list" />
+    <dialog
+        android:id="@+id/bottomModalFragment"
+        android:name="com.company.roomlogin.BottomModalFragment"
+        android:label="fragment_bottom_modal_list_dialog"
+        tools:layout="@layout/fragment_bottom_modal_list_dialog" />
 </navigation>

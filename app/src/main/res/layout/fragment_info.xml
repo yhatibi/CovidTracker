@@ -6,19 +6,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/dark"
     tools:context=".InfoFragment">
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:scaleType="fitXY"
-        android:src="@drawable/topinfobg"/>
-
-
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-
 
             <RelativeLayout
                 android:layout_marginTop="32dp"
@@ -65,55 +56,48 @@
                     app:cardCornerRadius="12dp"
                     android:layout_margin="12dp">
 
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitXY"
+                        android:background="@drawable/info_card" />
+
                     <LinearLayout
                         android:gravity="center"
                         android:padding="16dp"
-                        android:orientation="vertical"
+                        android:orientation="horizontal"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
                         <ImageView
                             android:src="@mipmap/ic_avatar"
                             android:layout_width="80dp"
-                            android:layout_height="80dp"/>
-
-                        <TextView
-                            android:layout_marginTop="12dp"
-                            android:textColor="@color/dark"
-                            android:text="Calendar"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"/>
-
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-                <androidx.cardview.widget.CardView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_columnWeight="1"
-                    android:layout_rowWeight="1"
-                    app:cardElevation="6dp"
-                    app:cardCornerRadius="12dp"
-                    android:layout_margin="12dp">
+                            android:layout_height="80dp"
+                            android:layout_weight="1"/>
 
                     <LinearLayout
                         android:gravity="center"
                         android:padding="16dp"
                         android:orientation="vertical"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2">
 
-                        <ImageView
-                            android:src="@mipmap/ic_avatar"
-                            android:layout_width="80dp"
-                            android:layout_height="80dp"/>
+                            <TextView
+                                android:textColor="@color/white"
+                                android:text="Informacion de la App"
+                                android:textStyle="bold"
+                                android:textSize="18sp"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent" />
 
                         <TextView
-                            android:layout_marginTop="12dp"
-                            android:textColor="@color/dark"
+                            android:textColor="@color/white"
                             android:text="Calendar"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"/>
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
 
+                        </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -126,55 +110,48 @@
                     app:cardCornerRadius="12dp"
                     android:layout_margin="12dp">
 
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitXY"
+                        android:background="@drawable/info_card_1" />
+
                     <LinearLayout
                         android:gravity="center"
                         android:padding="16dp"
-                        android:orientation="vertical"
+                        android:orientation="horizontal"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
                         <ImageView
                             android:src="@mipmap/ic_avatar"
                             android:layout_width="80dp"
-                            android:layout_height="80dp"/>
+                            android:layout_height="80dp"
+                            android:layout_weight="1"/>
 
-                        <TextView
-                            android:layout_marginTop="12dp"
-                            android:textColor="@color/dark"
-                            android:text="Calendar"
+                        <LinearLayout
+                            android:gravity="center"
+                            android:padding="16dp"
+                            android:orientation="vertical"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"/>
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2">
 
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-                <androidx.cardview.widget.CardView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_columnWeight="1"
-                    android:layout_rowWeight="1"
-                    app:cardElevation="6dp"
-                    app:cardCornerRadius="12dp"
-                    android:layout_margin="12dp">
+                            <TextView
+                                android:textColor="@color/white"
+                                android:text="Informacion de la App"
+                                android:textStyle="bold"
+                                android:textSize="18sp"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent" />
 
-                    <LinearLayout
-                        android:gravity="center"
-                        android:padding="16dp"
-                        android:orientation="vertical"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                            <TextView
+                                android:textColor="@color/white"
+                                android:text="Calendar"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent" />
 
-                        <ImageView
-                            android:src="@mipmap/ic_avatar"
-                            android:layout_width="80dp"
-                            android:layout_height="80dp"/>
-
-                        <TextView
-                            android:layout_marginTop="12dp"
-                            android:textColor="@color/dark"
-                            android:text="Calendar"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"/>
-
+                        </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -187,27 +164,51 @@
                     app:cardCornerRadius="12dp"
                     android:layout_margin="12dp">
 
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitXY"
+                        android:background="@drawable/info_card" />
+
                     <LinearLayout
                         android:gravity="center"
                         android:padding="16dp"
-                        android:orientation="vertical"
+                        android:orientation="horizontal"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
                         <ImageView
                             android:src="@mipmap/ic_avatar"
                             android:layout_width="80dp"
-                            android:layout_height="80dp"/>
+                            android:layout_height="80dp"
+                            android:layout_weight="1"/>
 
-                        <TextView
-                            android:layout_marginTop="12dp"
-                            android:textColor="@color/dark"
-                            android:text="Calendar"
+                        <LinearLayout
+                            android:gravity="center"
+                            android:padding="16dp"
+                            android:orientation="vertical"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"/>
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2">
 
+                            <TextView
+                                android:textColor="@color/white"
+                                android:text="Informacion de la App"
+                                android:textStyle="bold"
+                                android:textSize="18sp"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent" />
+
+                            <TextView
+                                android:textColor="@color/white"
+                                android:text="Calendar"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent" />
+
+                        </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
+
                 <androidx.cardview.widget.CardView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -217,30 +218,159 @@
                     app:cardCornerRadius="12dp"
                     android:layout_margin="12dp">
 
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitXY"
+                        android:background="@drawable/info_card_1" />
+
                     <LinearLayout
                         android:gravity="center"
                         android:padding="16dp"
-                        android:orientation="vertical"
+                        android:orientation="horizontal"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
                         <ImageView
                             android:src="@mipmap/ic_avatar"
                             android:layout_width="80dp"
-                            android:layout_height="80dp"/>
+                            android:layout_height="80dp"
+                            android:layout_weight="1"/>
 
-                        <TextView
-                            android:layout_marginTop="12dp"
-                            android:textColor="@color/dark"
-                            android:text="Calendar"
+                        <LinearLayout
+                            android:gravity="center"
+                            android:padding="16dp"
+                            android:orientation="vertical"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"/>
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2">
 
+                            <TextView
+                                android:textColor="@color/white"
+                                android:text="Informacion de la App"
+                                android:textStyle="bold"
+                                android:textSize="18sp"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent" />
+
+                            <TextView
+                                android:textColor="@color/white"
+                                android:text="Calendar"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent" />
+
+                        </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="1"
+                    app:cardElevation="6dp"
+                    app:cardCornerRadius="12dp"
+                    android:layout_margin="12dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitXY"
+                        android:background="@drawable/info_card" />
+
+                    <LinearLayout
+                        android:gravity="center"
+                        android:padding="16dp"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:src="@mipmap/ic_avatar"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:layout_weight="1"/>
+
+                        <LinearLayout
+                            android:gravity="center"
+                            android:padding="16dp"
+                            android:orientation="vertical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2">
+
+                            <TextView
+                                android:textColor="@color/white"
+                                android:text="Informacion de la App"
+                                android:textStyle="bold"
+                                android:textSize="18sp"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent" />
+
+                            <TextView
+                                android:textColor="@color/white"
+                                android:text="Calendar"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="1"
+                    app:cardElevation="6dp"
+                    app:cardCornerRadius="12dp"
+                    android:layout_margin="12dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitXY"
+                        android:background="@drawable/info_card_1" />
+
+                    <LinearLayout
+                        android:gravity="center"
+                        android:padding="16dp"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:src="@mipmap/ic_avatar"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:layout_weight="1"/>
+
+                        <LinearLayout
+                            android:gravity="center"
+                            android:padding="16dp"
+                            android:orientation="vertical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2">
+
+                            <TextView
+                                android:textColor="@color/white"
+                                android:text="Informacion de la App"
+                                android:textStyle="bold"
+                                android:textSize="18sp"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent" />
+
+                            <TextView
+                                android:textColor="@color/white"
+                                android:text="Calendar"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
             </GridLayout>
-
-
         </LinearLayout>
-
 </ScrollView>

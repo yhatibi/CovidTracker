@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.company.roomlogin.dummy.DummyContent;
+import com.ramotion.foldingcell.FoldingCell;
 
 /**
  * A fragment representing a list of Items.
@@ -45,6 +46,10 @@ public class HistoryFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+
+
+
+
         if (getArguments() != null) {
             mColumnCount = getArguments().getInt(ARG_COLUMN_COUNT);
         }
@@ -66,6 +71,11 @@ public class HistoryFragment extends Fragment {
             }
             recyclerView.setAdapter(new MyItemRecyclerViewAdapter(DummyContent.ITEMS));
         }
+
+
+
+
+
         return view;
     }
 }

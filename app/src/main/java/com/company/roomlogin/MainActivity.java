@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
     PerfilFragment perfilFragment = new PerfilFragment();
     MapsFragment mapsFragment = new MapsFragment();
+
     HistoryFragment historyFragment = new HistoryFragment();
     ActivityMainBinding binding;
 
