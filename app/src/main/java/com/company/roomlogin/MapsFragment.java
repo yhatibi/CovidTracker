@@ -9,12 +9,14 @@ import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.NavigationUI;
 
+import android.app.Activity;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
 import android.os.Handler;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 
 import android.view.ViewGroup;
@@ -32,7 +34,9 @@ import com.google.android.gms.maps.model.BitmapDescriptor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MapStyleOptions;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.linroid.filtermenu.library.FilterMenu;
 import com.linroid.filtermenu.library.FilterMenuLayout;
 
@@ -107,12 +111,23 @@ public class MapsFragment extends Fragment  {
                 }
 
                 LatLng sydney = new LatLng(lat, longi);
-                googleMap.addMarker(new MarkerOptions().position(sydney).icon(bitmapDescriptorFromVector(getActivity(), R.drawable.iconvirusverde)).title("Este eres tu!"));
-                googleMap.addMarker(new MarkerOptions().position(new LatLng(41.4572703, 2.1998943)).icon(bitmapDescriptorFromVector(getActivity(), R.drawable.iconvirusrojo)).title("Este eres tu!"));
-                googleMap.addMarker(new MarkerOptions().position(new LatLng(41.457763, 2.1996795)).icon(bitmapDescriptorFromVector(getActivity(), R.drawable.iconvirusamarillo)).title("Este eres tu!"));
-                googleMap.addMarker(new MarkerOptions().position(new LatLng(41.4581813, 2.1991225)).icon(bitmapDescriptorFromVector(getActivity(), R.drawable.iconvirusverde)).title("Este eres tu!"));
+//                googleMap.addMarker(new MarkerOptions().position(sydney).icon(bitmapDescriptorFromVector(getActivity(), R.drawable.iconvirusverde)).title("Este eres tu!"));
+//                googleMap.addMarker(new MarkerOptions().position(new LatLng(41.4572703, 2.1998943)).icon(bitmapDescriptorFromVector(getActivity(), R.drawable.iconvirusrojo)).title("Este eres tu!"));
+//                googleMap.addMarker(new MarkerOptions().position(new LatLng(41.457763, 2.1996795)).icon(bitmapDescriptorFromVector(getActivity(), R.drawable.iconvirusamarillo)).title("Este eres tu!"));
+                googleMap.addMarker(new MarkerOptions().position(new LatLng(41.4581813, 2.1991225)).icon(bitmapDescriptorFromVector(getActivity(), R.drawable.ic_avatar_background)).title("Este eres tu!"));
                 googleMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
 
+                googleMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
+                    @Override
+                    public boolean onMarkerClick(Marker marker) {
+                        String locAddress = marker.getTitle();
+
+                        BottomModalFragment bottomSheet = new BottomModalFragment();
+                        bottomSheet.show(getFragmentManager(),
+                                "ModalBottomSheet");
+                        return true;
+                    }
+                });
                 LatLng coordinate = new LatLng(lat, longi); //Store these lat lng values somewhere. These should be constant.
                 CameraUpdate location = CameraUpdateFactory.newLatLngZoom(
                         coordinate, 17);
@@ -155,8 +170,18 @@ public class MapsFragment extends Fragment  {
 
 //       loquesea();
 
+        binding.openBottomSheet.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v)
+                    {
+                        BottomModalFragment bottomSheet = new BottomModalFragment();
+                        bottomSheet.show(getFragmentManager(),
+                                "ModalBottomSheet");
 
 
+                    }
+                });
 
 
         SupportMapFragment mapFragment =

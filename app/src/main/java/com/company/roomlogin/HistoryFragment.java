@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.company.roomlogin.databinding.FragmentHistoryBinding;
 import com.company.roomlogin.dummy.DummyContent;
 import com.ramotion.foldingcell.FoldingCell;
 
@@ -19,6 +20,8 @@ import com.ramotion.foldingcell.FoldingCell;
  * A fragment representing a list of Items.
  */
 public class HistoryFragment extends Fragment {
+
+    FragmentHistoryBinding binding;
 
     // TODO: Customize parameter argument names
     private static final String ARG_COLUMN_COUNT = "column-count";
@@ -58,7 +61,7 @@ public class HistoryFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_history_list, container, false);
+        View view = inflater.inflate(R.layout.fragment_history, container, false);
 
         // Set the adapter
         if (view instanceof RecyclerView) {
@@ -73,7 +76,16 @@ public class HistoryFragment extends Fragment {
         }
 
 
+        // get our folding cell
+        final FoldingCell fc = (FoldingCell) view.findViewById(R.id.folding_cell);
 
+        // attach click listener to folding cell
+        fc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                fc.toggle(false);
+            }
+        });
 
 
         return view;

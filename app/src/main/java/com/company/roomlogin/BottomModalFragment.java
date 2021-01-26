@@ -13,7 +13,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 /**
  * <p>A fragment that shows a list of items as a modal bottom sheet.</p>
@@ -24,67 +26,37 @@ import android.widget.TextView;
  */
 public class BottomModalFragment extends BottomSheetDialogFragment {
 
-    // TODO: Customize parameter argument names
-    private static final String ARG_ITEM_COUNT = "item_count";
-
-    // TODO: Customize parameters
-    public static BottomModalFragment newInstance(int itemCount) {
-        final BottomModalFragment fragment = new BottomModalFragment();
-        final Bundle args = new Bundle();
-        args.putInt(ARG_ITEM_COUNT, itemCount);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
-                             @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_bottom_modal_list_dialog, container, false);
+    public View onCreateView(LayoutInflater inflater, @Nullable
+            ViewGroup container, @Nullable Bundle savedInstanceState)
+    {
+        View v = inflater.inflate(R.layout.fragment_bottom_modal_list_dialog,
+                container, false);
+
+        Button algo_button = v.findViewById(R.id.algo_button);
+        Button course_button = v.findViewById(R.id.course_button);
+
+        algo_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                Toast.makeText(getActivity(),
+                        "Algorithm Shared", Toast.LENGTH_SHORT)
+                        .show();
+                dismiss();
+            }
+        });
+
+        course_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                Toast.makeText(getActivity(),
+                        "Course Shared", Toast.LENGTH_SHORT)
+                        .show();
+                dismiss();
+            }
+        });
+        return v;
     }
-
-    @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        final RecyclerView recyclerView = (RecyclerView) view;
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        recyclerView.setAdapter(new ItemAdapter(getArguments().getInt(ARG_ITEM_COUNT)));
-    }
-
-    private class ViewHolder extends RecyclerView.ViewHolder {
-
-        final TextView text;
-
-        ViewHolder(LayoutInflater inflater, ViewGroup parent) {
-            // TODO: Customize the item layout
-            super(inflater.inflate(R.layout.fragment_bottom_modal_list_dialog_item, parent, false));
-            text = itemView.findViewById(R.id.text);
-        }
-    }
-
-    private class ItemAdapter extends RecyclerView.Adapter<ViewHolder> {
-
-        private final int mItemCount;
-
-        ItemAdapter(int itemCount) {
-            mItemCount = itemCount;
-        }
-
-        @NonNull
-        @Override
-        public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-            return new ViewHolder(LayoutInflater.from(parent.getContext()), parent);
-        }
-
-        @Override
-        public void onBindViewHolder(ViewHolder holder, int position) {
-            holder.text.setText(String.valueOf(position));
-        }
-
-        @Override
-        public int getItemCount() {
-            return mItemCount;
-        }
-
-    }
-
 }

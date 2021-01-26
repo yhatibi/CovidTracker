@@ -83,4 +83,9 @@
         android:name="com.company.roomlogin.BottomModalFragment"
         android:label="fragment_bottom_modal_list_dialog"
         tools:layout="@layout/fragment_bottom_modal_list_dialog" />
+    <fragment
+        android:id="@+id/internalWebFragment"
+        android:name="com.company.roomlogin.InternalWebFragment"
+        android:label="fragment_internal_web"
+        tools:layout="@layout/fragment_internal_web" />
 </navigation>
