@@ -1,5 +1,7 @@
 package com.company.roomlogin;
 
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -14,6 +16,14 @@ import androidx.navigation.Navigation;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.LinearInterpolator;
+import android.view.animation.RotateAnimation;
+import android.widget.ImageView;
+
+import com.company.roomlogin.databinding.FragmentSplashBinding;
+import com.daimajia.easing.Glider;
+import com.daimajia.easing.Skill;
 
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executor;
@@ -28,9 +38,13 @@ public class SplashFragment extends Fragment {
 
     NavController navController;
 
+    FragmentSplashBinding binding;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_splash, container, false);
+
+
     }
 
     @Override
@@ -38,6 +52,8 @@ public class SplashFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         navController = Navigation.findNavController(view);
+
+
 
         // esta variable deberia estar en un ViewModel
         MutableLiveData<Boolean> finishedLoading = new MutableLiveData<>();
@@ -56,7 +72,7 @@ public class SplashFragment extends Fragment {
             public void run() {
                 try {
                     // simular la carga de recursos
-                    Thread.sleep(1000);
+                    Thread.sleep(10000);
                     finishedLoading.postValue(true);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
@@ -64,5 +80,9 @@ public class SplashFragment extends Fragment {
             }
         });
 
+
+
     }
+
+
 }

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/dark"
+    android:background="@drawable/loginbg"
     android:orientation="vertical">
 
 
@@ -62,7 +62,7 @@
             android:layout_width="150dp"
             android:layout_height="10dp"
             android:text="Iniciar Sesion"
-            android:textColor="@color/gray"
+            android:textColor="@color/dark"
             app:sub_btn_background="@color/white"
             app:sub_btn_duration="3000"
             app:sub_btn_line_color="@color/dark"
