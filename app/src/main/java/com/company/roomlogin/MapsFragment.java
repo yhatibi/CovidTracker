@@ -111,10 +111,17 @@ public class MapsFragment extends Fragment  {
                 }
 
                 LatLng sydney = new LatLng(lat, longi);
-//                googleMap.addMarker(new MarkerOptions().position(sydney).icon(bitmapDescriptorFromVector(getActivity(), R.drawable.iconvirusverde)).title("Este eres tu!"));
-//                googleMap.addMarker(new MarkerOptions().position(new LatLng(41.4572703, 2.1998943)).icon(bitmapDescriptorFromVector(getActivity(), R.drawable.iconvirusrojo)).title("Este eres tu!"));
-//                googleMap.addMarker(new MarkerOptions().position(new LatLng(41.457763, 2.1996795)).icon(bitmapDescriptorFromVector(getActivity(), R.drawable.iconvirusamarillo)).title("Este eres tu!"));
-                googleMap.addMarker(new MarkerOptions().position(new LatLng(41.4581813, 2.1991225)).icon(bitmapDescriptorFromVector(getActivity(), R.drawable.ic_avatar_background)).title("Este eres tu!"));
+                googleMap.addMarker(new MarkerOptions().position(sydney).icon(bitmapDescriptorFromVector(getActivity(), R.drawable.meiconmap)).title("Este eres tu!"));
+                googleMap.addMarker(new MarkerOptions().position(new LatLng(41.4572703, 2.1998943)).icon(bitmapDescriptorFromVector(getActivity(), R.drawable.iconvirusrojo)).title("Este eres tu!"));
+                googleMap.addMarker(new MarkerOptions().position(new LatLng(41.45864029494172, 2.19965766341113)).icon(bitmapDescriptorFromVector(getActivity(), R.drawable.iconvirusrojo)).title("Este eres tu!"));
+                googleMap.addMarker(new MarkerOptions().position(new LatLng(41.45880110579676, 2.1986491529034415)).icon(bitmapDescriptorFromVector(getActivity(), R.drawable.iconvirusrojo)).title("Este eres tu!"));
+                googleMap.addMarker(new MarkerOptions().position(new LatLng(41.457763, 2.1996795)).icon(bitmapDescriptorFromVector(getActivity(), R.drawable.iconvirusamarillo)).title("Es-Positivo"));
+                googleMap.addMarker(new MarkerOptions().position(new LatLng(41.4581813, 2.1991225)).icon(bitmapDescriptorFromVector(getActivity(), R.drawable.iconvirusverde)).title("Negativo"));
+                googleMap.addMarker(new MarkerOptions().position(new LatLng(41.4581813, 2.1991225)).icon(bitmapDescriptorFromVector(getActivity(), R.drawable.iconvirusverde)).title("Negativo"));
+                googleMap.addMarker(new MarkerOptions().position(new LatLng(41.457616, 2.198861)).icon(bitmapDescriptorFromVector(getActivity(), R.drawable.iconvirusverde)).title("Negativo"));
+                googleMap.addMarker(new MarkerOptions().position(new LatLng(41.45826238786283, 2.1997649517630116)).icon(bitmapDescriptorFromVector(getActivity(), R.drawable.iconvirusverde)).title("Negativo"));
+                googleMap.addMarker(new MarkerOptions().position(new LatLng(41.45811765690835, 2.1988476363409166)).icon(bitmapDescriptorFromVector(getActivity(), R.drawable.iconvirusamarillo)).title("Negativo"));
+                googleMap.addMarker(new MarkerOptions().position(new LatLng(41.45816992090185, 2.2002799358520435)).icon(bitmapDescriptorFromVector(getActivity(), R.drawable.iconvirusamarillo)).title("Negativo"));
                 googleMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
 
                 googleMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
@@ -175,11 +182,11 @@ public class MapsFragment extends Fragment  {
                     @Override
                     public void onClick(View v)
                     {
-                        BottomModalFragment bottomSheet = new BottomModalFragment();
-                        bottomSheet.show(getFragmentManager(),
-                                "ModalBottomSheet");
-
-
+                        AppInfoFragment appInfoFragment= new AppInfoFragment();
+                        (getActivity()).getSupportFragmentManager().beginTransaction()
+                                    .replace(R.id.appInfoFragment, appInfoFragment, "")
+                  .addToBackStack(null)
+                            .commit();
                     }
                 });
 

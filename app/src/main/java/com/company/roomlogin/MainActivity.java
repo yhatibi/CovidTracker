@@ -1,7 +1,10 @@
 package com.company.roomlogin;
 
 import android.os.Bundle;
+import android.text.SpannableString;
+import android.text.style.TextAppearanceSpan;
 import android.util.Log;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
@@ -24,6 +27,7 @@ import com.company.roomlogin.databinding.ActivityMainBinding;
 import com.company.roomlogin.databinding.DrawerHeaderBinding;
 import com.company.roomlogin.model.Usuario;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -42,6 +46,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+
+
 
         setContentView((binding = ActivityMainBinding.inflate(getLayoutInflater())).getRoot());
 
@@ -109,6 +115,8 @@ public class MainActivity extends AppCompatActivity {
         BottomNavigationView bottomNav = findViewById(R.id.bottomAppBar);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
     }
+
+
 
     private BottomNavigationView.OnNavigationItemSelectedListener
             navListener

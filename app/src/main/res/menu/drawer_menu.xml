@@ -1,14 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/homeFragment"
         android:icon="@drawable/ic_baseline_home_24"
         android:title="Inicio" />
 
     <item
+        android:id="@+id/historyFragment"
+        android:icon="@drawable/ic_baseline_history_24"
+        android:title="History" />
+
+    <item
         android:id="@+id/perfilFragment"
-        android:icon="@drawable/ic_baseline_account_circle_24"
+        android:icon="@drawable/ic_baseline_person_24"
         android:title="Perfil" />
+
+    <item android:title="Informacion"
+        app:titleTextColor="@color/white"
+        app:subtitleTextColor="@color/white">
+
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/infoFragment"
+                    android:icon="@drawable/ic_baseline_info_24"
+                    android:title="Info de la App" />
+
+                <item
+                    android:id="@+id/mapsFragment"
+                    android:icon="@drawable/ic_baseline_query_stats_24"
+                    android:title="Estadisticas del Covid-19" />
+            </group>
+        </menu>
+    </item>
 
     <item
         android:id="@+id/cerrarSesionFragment"

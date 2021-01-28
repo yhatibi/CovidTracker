@@ -50,16 +50,17 @@
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/open_bottom_sheet"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            android:tint="@color/white"
-            android:layout_marginLeft="24dp"
+            android:layout_gravity="top|end"
+            android:layout_marginRight="24dp"
             app:backgroundTint="@color/white"
             android:elevation="10dp"
             android:clickable="true"
             app:fabCustomSize="30dp"
-            android:src="@drawable/ic_baseline_menu_24" />
+            android:src="@drawable/ic_baseline_help_24"
+            android:tint="@color/dark"/>
     </FrameLayout>
 
 

@@ -71,7 +71,7 @@ public class IniciarSesionFragment extends Fragment {
                             public void run() {
                                 navController.navigate(R.id.action_iniciarSesionFragment_to_inicioFragment);
                             }
-                        }, 4000);
+                        }, 2500);
                         break;
 
                     case AUTENTICACION_INVALIDA:

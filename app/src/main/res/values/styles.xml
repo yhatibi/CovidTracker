@@ -5,4 +5,7 @@
         <item name="color">@color/black</item>
     </style>
 
+    <style name="TextAppearance44">
+        <item name="android:textColor">#FF0000</item>
+    </style>
 </resources>

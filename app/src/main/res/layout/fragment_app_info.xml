@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/dark"
+    tools:context=".AppInfoFragment">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/TitleInfo"
+                android:text="Como funciona Covid-Tracker?"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_below="@+id/TitleInfo"
+                android:text="Tutorial del funcionamiento basiico de la App."
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </RelativeLayout>
+
+        <ImageView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/longseparator"/>
+
+        <RelativeLayout
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/primerpaso"
+                android:text="1. Mapa Principal"
+                android:textColor="@color/white"
+                android:textSize="21sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/desc1"
+                android:layout_below="@+id/primerpaso"
+                android:text="La pantalla princpial y la mas importante de la App es el mapa, donde puedes monitorizar todas aquellas personas que utilizen la app, asi sabiendo quien es Positivo, Ex-Positivo y Negativo."
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <ImageView
+                android:layout_margin="15dp"
+                android:layout_below="@+id/desc1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/mapexemple"/>
+
+        </RelativeLayout>
+
+        <ImageView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/longseparator"/>
+
+        <RelativeLayout
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/segundopaso"
+                android:text="1.1 Informacion del mapa"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/desc2"
+                android:layout_below="@+id/segundopaso"
+                android:text="En el mapa podemos observar diferentes marcadores de diferentes colores, si interactuamos con ellos se abrirá una pantalla emergente con la información de esta persona respecto al covid."
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <ImageView
+                android:layout_margin="15dp"
+                android:layout_below="@+id/desc2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/bottomsheetexemple"/>
+
+        </RelativeLayout>
+
+        <ImageView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/longseparator"/>
+
+
+        <RelativeLayout
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tercerpaso"
+                android:text="2. Historial"
+                android:textColor="@color/white"
+                android:textSize="21sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/desc3"
+                android:layout_below="@+id/tercerpaso"
+                android:text="En Historial podrás consultar tus antiguas ubicaciones y si has estado cerca de un positivo o no. Estoy te ayudara a prevenir futuros contagios."
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <ImageView
+                android:layout_margin="15dp"
+                android:layout_below="@+id/desc3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/mapexemple"/>
+
+        </RelativeLayout>
+
+        <ImageView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/longseparator"/>
+
+
+    </LinearLayout>
+
+
+
+</ScrollView>

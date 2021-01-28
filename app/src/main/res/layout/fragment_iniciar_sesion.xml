@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/loginbg"
     android:orientation="vertical">
 
 
@@ -59,13 +60,16 @@
         <com.spark.submitbutton.SubmitButton
             android:id="@+id/iniciarSesion"
             android:layout_width="150dp"
-            android:layout_height="10dp"
+            android:layout_height="81dp"
             android:text="Iniciar Sesion"
+            android:textAllCaps="true"
             android:textColor="@color/dark"
+            android:textSize="14dp"
+            android:textStyle="bold"
             app:sub_btn_background="@color/white"
-            app:sub_btn_duration="3000"
+            app:sub_btn_duration="2000"
             app:sub_btn_line_color="@color/dark"
-            app:sub_btn_ripple_color="@color/dark"
+            app:sub_btn_ripple_color="#5BD550"
             app:sub_btn_tick_color="@color/white" />
 
 

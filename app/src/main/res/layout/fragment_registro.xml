@@ -1,36 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/loginbg"
     android:orientation="vertical">
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="REGISTER"
-        android:textSize="24sp" />
+        android:gravity="center_horizontal"
+        android:layout_centerInParent="true"
+        android:paddingTop="25dp"
+        android:orientation="vertical" >
 
-    <EditText
-        android:id="@+id/username"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Username" />
+        <EditText
+            android:id="@+id/username"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/dark"
+            android:hint="Username" />
 
-    <EditText
-        android:id="@+id/password"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Password" />
+        <EditText
+            android:id="@+id/password"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/dark"
+            android:hint="Password" />
 
-    <EditText
-        android:id="@+id/biography"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Bio" />
+        <EditText
+            android:id="@+id/biography"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/dark"
+            android:hint="Bio" />
 
-    <Button
-        android:id="@+id/registrar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="REGISTRAR" />
-</LinearLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:src="@drawable/topline"/>
+
+        <Spinner
+            android:id="@+id/customIconSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"/>
+
+        <Switch
+            android:id="@+id/switch1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Vacunado?"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="24dp"
+            android:textSize="16sp"
+            android:layout_marginEnd="24dp" />
+
+
+        <com.spark.submitbutton.SubmitButton
+            android:id="@+id/registrar"
+            android:layout_width="150dp"
+            android:layout_height="39dp"
+            android:text="Iniciar Sesion"
+            android:textAllCaps="true"
+            android:textColor="@color/dark"
+            android:textSize="14dp"
+            android:textStyle="bold"
+            app:sub_btn_background="@color/white"
+            app:sub_btn_duration="2000"
+            app:sub_btn_line_color="@color/dark"
+            app:sub_btn_ripple_color="#5BD550"
+            app:sub_btn_tick_color="@color/white" />
+
+
+    </LinearLayout>
+
+</RelativeLayout>
