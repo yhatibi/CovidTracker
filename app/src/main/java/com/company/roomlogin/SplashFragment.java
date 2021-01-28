@@ -72,7 +72,7 @@ public class SplashFragment extends Fragment {
             public void run() {
                 try {
                     // simular la carga de recursos
-                    Thread.sleep(10000);
+                    Thread.sleep(4000);
                     finishedLoading.postValue(true);
                 } catch (InterruptedException e) {
                     e.printStackTrace();

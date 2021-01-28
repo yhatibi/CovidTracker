@@ -58,7 +58,6 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(binding.toolbar);
 
 
-
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
                 // Top-level destinations:
                 R.id.mapsFragment

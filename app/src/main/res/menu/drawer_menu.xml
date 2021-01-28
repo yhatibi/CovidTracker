@@ -26,16 +26,31 @@
                     android:id="@+id/infoFragment"
                     android:icon="@drawable/ic_baseline_info_24"
                     android:title="Info de la App" />
-
                 <item
                     android:id="@+id/mapsFragment"
                     android:icon="@drawable/ic_baseline_query_stats_24"
                     android:title="Estadisticas del Covid-19" />
+                <item
+                    android:icon="@drawable/ic_baseline_masks_24"
+                    android:title="Medidas preventivas Covid-19" />
+                <item
+                    android:icon="@drawable/ic_baseline_coronavirus_24"
+                    android:title="Noticias de Covid-19" />
+
             </group>
         </menu>
     </item>
 
-    <item
-        android:id="@+id/cerrarSesionFragment"
-        android:title="Cerrar sesión" />
-</menu>
+    <item android:title="">
+        <menu>
+            <group android:checkableBehavior="single">
+
+                <item
+                    android:id="@+id/cerrarSesionFragment"
+                    android:title="Cerrar sesión" />
+            </group>
+        </menu>
+</item>
+
+
+    </menu>
