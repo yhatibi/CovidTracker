@@ -9,6 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
@@ -20,7 +21,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.company.roomlogin.databinding.FragmentBottomModalListDialogBinding;
 import com.company.roomlogin.databinding.FragmentInfoBinding;
+import com.company.roomlogin.databinding.FragmentIniciarSesionBinding;
+import com.company.roomlogin.databinding.FragmentRegistroBinding;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -29,7 +33,7 @@ import com.company.roomlogin.databinding.FragmentInfoBinding;
  */
 public class InfoFragment extends Fragment {
 
-    FragmentInfoBinding bindin;
+    FragmentInfoBinding binding;
 
     CardView card1;
     CardView card2;
@@ -57,26 +61,9 @@ public class InfoFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view =  inflater.inflate(R.layout.fragment_info, container, false);
+        return (binding = FragmentInfoBinding.inflate(inflater, container, false)).getRoot();
 
 
-
-
-
-        card2 = view.findViewById(R.id.noticias);
-
-
-        card2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String url = "http://www.example.com";
-                Intent i = new Intent(Intent.ACTION_VIEW);
-                i.setData(Uri.parse(url));
-                startActivity(i);
-            }
-        });
-
-        return view;
     }
 
     @Override
@@ -85,14 +72,39 @@ public class InfoFragment extends Fragment {
 
         navController = Navigation.findNavController(view);
 
-        card1 = view.findViewById(R.id.card);
-
-        card1.setOnClickListener(new View.OnClickListener() {
-            @SuppressLint("ResourceType")
+        binding.card.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 navController.navigate(R.id.action_infoFragment_to_appInfo);
+
+            }
+        });
+
+        binding.noticias.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String url = "https://www.google.com/search?q=covid&sxsrf=ALeKk02ukwM0tLJp83j5irNIg3aeVNBEGw:1611953249886&source=lnms&tbm=nws&sa=X&ved=2ahUKEwig-enmgcLuAhWmQkEAHa3rD6wQ_AUoAXoECAYQAw&biw=1920&bih=937";
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(url));
+                startActivity(i);
+            }
+        });
+        binding.stats.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String url = "https://news.google.com/covid19/map?hl=es";
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(url));
+                startActivity(i);
+            }
+        });
+        binding.medidas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String url = "https://www.mscbs.gob.es/profesionales/saludPublica/ccayes/alertasActual/nCov/ciudadania.htm";
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(url));
+                startActivity(i);
             }
         });
 

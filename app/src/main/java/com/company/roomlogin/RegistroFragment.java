@@ -10,6 +10,7 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -74,7 +75,13 @@ public class RegistroFragment extends Fragment implements AdapterView.OnItemSele
             public void onChanged(AutenticacionViewModel.EstadoDeLaAutenticacion estadoDeLaAutenticacion) {
                 switch (estadoDeLaAutenticacion){
                     case AUTENTICADO:
-                        navController.navigate(R.id.action_registroFragment_to_inicioFragment);
+                        final Handler handler = new Handler();
+                        handler.postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                navController.navigate(R.id.action_registroFragment_to_inicioFragment);
+                            }
+                        }, 2500);
                         break;
                 }
             }

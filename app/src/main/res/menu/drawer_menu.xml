@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/homeFragment"
+        android:id="@+id/mapsFragment"
         android:icon="@drawable/ic_baseline_home_24"
         android:title="Inicio" />
 
@@ -23,11 +23,10 @@
         <menu>
             <group android:checkableBehavior="single">
                 <item
-                    android:id="@+id/infoFragment"
+                    android:id="@+id/appInfoFragment"
                     android:icon="@drawable/ic_baseline_info_24"
                     android:title="Info de la App" />
                 <item
-                    android:id="@+id/mapsFragment"
                     android:icon="@drawable/ic_baseline_query_stats_24"
                     android:title="Estadisticas del Covid-19" />
                 <item
@@ -36,21 +35,15 @@
                 <item
                     android:icon="@drawable/ic_baseline_coronavirus_24"
                     android:title="Noticias de Covid-19" />
-
             </group>
         </menu>
     </item>
 
-    <item android:title="">
-        <menu>
-            <group android:checkableBehavior="single">
+            <group android:id="@+id/grouseparador" >
 
                 <item
                     android:id="@+id/cerrarSesionFragment"
                     android:title="Cerrar sesión" />
             </group>
-        </menu>
-</item>
-
 
     </menu>

@@ -23,6 +23,7 @@ import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
+
 import com.company.roomlogin.databinding.ActivityMainBinding;
 import com.company.roomlogin.databinding.DrawerHeaderBinding;
 import com.company.roomlogin.model.Usuario;
@@ -55,12 +56,11 @@ public class MainActivity extends AppCompatActivity {
 
         autenticacionViewModel = new ViewModelProvider(this).get(AutenticacionViewModel.class);
 
-        setSupportActionBar(binding.toolbar);
 
 
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
                 // Top-level destinations:
-                R.id.mapsFragment
+                R.id.mapsFragment, R.id.mapsFragment
         )
                 .setOpenableLayout(binding.drawerLayout)
                 .build();
@@ -68,7 +68,6 @@ public class MainActivity extends AppCompatActivity {
 
         NavController navController = ((NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment)).getNavController();
         NavigationUI.setupWithNavController(binding.navView, navController);
-        NavigationUI.setupWithNavController(binding.toolbar, navController, appBarConfiguration);
 
 
 
@@ -83,11 +82,9 @@ public class MainActivity extends AppCompatActivity {
                 || destination.getId() == R.id.registroFragment
                 || destination.getId() == R.id.splashFragment) {
                     binding.navView.setVisibility(View.GONE);
-                    binding.toolbar.setVisibility(View.GONE);
                     binding.bottomAppBar.setVisibility(View.GONE);
 //                    binding.fab.setVisibility(View.GONE);
                 } else {
-                    binding.toolbar.setVisibility(View.VISIBLE);
                     binding.navView.setVisibility(View.VISIBLE);
                     binding.bottomAppBar.setVisibility(View.VISIBLE);
 //                    binding.fab.setVisibility(View.VISIBLE);
@@ -97,7 +94,6 @@ public class MainActivity extends AppCompatActivity {
 
                 if ( destination.getId() == R.id.mapsFragment) {
                     binding.navView.setVisibility(View.GONE);
-                    binding.toolbar.setVisibility(View.GONE);
                 }
             }
         });
@@ -111,49 +107,49 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        BottomNavigationView bottomNav = findViewById(R.id.bottomAppBar);
-        bottomNav.setOnNavigationItemSelectedListener(navListener);
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomAppBar);
+        NavigationUI.setupWithNavController(bottomNavigationView, navController);
     }
 
 
 
-    private BottomNavigationView.OnNavigationItemSelectedListener
-            navListener
-            = new BottomNavigationView.OnNavigationItemSelectedListener() {
-        @Override
-        public boolean onNavigationItemSelected(
-                @NonNull MenuItem item)
-        {
-            // By using switch we can easily get
-            // the selected fragment
-            // by using there id.
-            Fragment selectedFragment = null;
-            switch (item.getItemId()) {
-                case R.id.mapsFragment:
-                    selectedFragment = new MapsFragment();
-                    break;
-                case R.id.perfilFragment:
-                    selectedFragment = new PerfilFragment();
-                    break;
-
-                case R.id.historyFragment:
-                    selectedFragment = new HistoryFragment();
-                    break;
-
-                case R.id.infoFragment:
-                    selectedFragment = new InfoFragment();
-                    break;
-            }
-            // It will help to replace the one fragment to other.
-            getSupportFragmentManager()
-                    .beginTransaction()
-                    .replace(
-                            R.id.nav_host_fragment,
-                            selectedFragment)
-                    .commit();
-            return true;
-        }
-    };
+//    private BottomNavigationView.OnNavigationItemSelectedListener
+//            navListener
+//            = new BottomNavigationView.OnNavigationItemSelectedListener() {
+//        @Override
+//        public boolean onNavigationItemSelected(
+//                @NonNull MenuItem item)
+//        {
+//            // By using switch we can easily get
+//            // the selected fragment
+//            // by using there id.
+//            Fragment selectedFragment = null;
+//            switch (item.getItemId()) {
+//                case R.id.mapsFragment:
+//                    selectedFragment = new MapsFragment();
+//                    break;
+//                case R.id.perfilFragment:
+//                    selectedFragment = new PerfilFragment();
+//                    break;
+//
+//                case R.id.historyFragment:
+//                    selectedFragment = new HistoryFragment();
+//                    break;
+//
+//                case R.id.infoFragment:
+//                    selectedFragment = new InfoFragment();
+//                    break;
+//            }
+//            // It will help to replace the one fragment to other.
+//            getSupportFragmentManager()
+//                    .beginTransaction()
+//                    .replace(
+//                            R.id.nav_host_fragment,
+//                            selectedFragment)
+//                    .commit();
+//            return true;
+//        }
+//    };
 
 
 

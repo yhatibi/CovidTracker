@@ -1,12 +1,20 @@
 package com.company.roomlogin;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
 
+import com.company.roomlogin.databinding.FragmentBottomModalListDialogBinding;
+import com.company.roomlogin.databinding.FragmentInfoBinding;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 
+import androidx.fragment.app.FragmentManager;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -25,38 +33,47 @@ import android.widget.Toast;
  * </pre>
  */
 public class BottomModalFragment extends BottomSheetDialogFragment {
+    private NavController navController;
+    private AutenticacionViewModel autenticacionViewModel;
+
+    FragmentBottomModalListDialogBinding binding;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable
-            ViewGroup container, @Nullable Bundle savedInstanceState)
-    {
-        View v = inflater.inflate(R.layout.fragment_bottom_modal_list_dialog,
-                container, false);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        return (binding = FragmentBottomModalListDialogBinding.inflate(inflater, container, false)).getRoot();
 
-//        Button algo_button = v.findViewById(R.id.algo_button);
-        Button course_button = v.findViewById(R.id.course_button);
 
-//        algo_button.setOnClickListener(new View.OnClickListener() {
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+//        navController = Navigation.findNavController(view);
+//
+//        binding.chat.setOnClickListener(new View.OnClickListener() {
 //            @Override
-//            public void onClick(View v)
-//            {
-//                Toast.makeText(getActivity(),
-//                        "Algorithm Shared", Toast.LENGTH_SHORT)
-//                        .show();
-//                dismiss();
+//            public void onClick(View v) {
+//                navController.navigate(R.id.action_infoFragment_to_appInfo);
+//
 //            }
 //        });
 
-        course_button.setOnClickListener(new View.OnClickListener() {
+        
+
+        binding.courseButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v)
-            {
+            public void onClick(View v) {
                 Toast.makeText(getActivity(),
                         "Cerrado!", Toast.LENGTH_SHORT)
                         .show();
                 dismiss();
             }
         });
-        return v;
+
+
+
     }
 }

@@ -12,7 +12,8 @@
         tools:layout="@layout/fragment_iniciar_sesion" >
         <action
             android:id="@+id/action_iniciarSesionFragment_to_registroFragment"
-            app:destination="@id/registroFragment" />
+            app:destination="@id/registroFragment"
+            app:enterAnim="@anim/fragment_open_enter" />
         <action
             android:id="@+id/action_iniciarSesionFragment_to_inicioFragment"
             app:destination="@id/mapsFragment" />
@@ -70,7 +71,9 @@
         tools:layout="@layout/fragment_info" >
         <action
             android:id="@+id/action_infoFragment_to_appInfo"
-            app:destination="@id/appInfoFragment" />
+            app:destination="@id/appInfoFragment"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_open_exit" />
     </fragment>
     <fragment
         android:id="@+id/mapsFragment2"
@@ -78,10 +81,10 @@
         android:label="fragment_maps2"
         tools:layout="@layout/fragment_maps2" />
     <fragment
-        android:id="@+id/historyFragment2"
+        android:id="@+id/historyFragment"
         android:name="com.company.roomlogin.HistoryFragment"
-        android:label="fragment_history_list"
-        tools:layout="@layout/fragment_history_list" />
+        android:label="fragment_history"
+        tools:layout="@layout/fragment_history" />
     <fragment
         android:id="@+id/historyFragment3"
         android:name="com.company.roomlogin.HistoryFragment"
@@ -102,4 +105,9 @@
         android:name="com.company.roomlogin.AppInfoFragment"
         android:label="fragment_app_info"
         tools:layout="@layout/fragment_app_info" />
+    <fragment
+        android:id="@+id/chatFragment"
+        android:name="com.company.roomlogin.ChatFragment"
+        android:label="fragment_chat"
+        tools:layout="@layout/fragment_chat" />
 </navigation>

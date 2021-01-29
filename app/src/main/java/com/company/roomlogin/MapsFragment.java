@@ -6,6 +6,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.NavigationUI;
 
@@ -39,6 +40,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.linroid.filtermenu.library.FilterMenu;
 import com.linroid.filtermenu.library.FilterMenuLayout;
+import com.shasin.notificationbanner.Banner;
 
 import android.Manifest;
 import android.app.AlertDialog;
@@ -67,6 +69,7 @@ public class MapsFragment extends Fragment  {
     String latitude, longitude;
     double lat = 41.457633f;
     double longi = 2.199405f;
+    private NavController navController;
 
     private FragmentMapsBinding binding;
     private static final String TAG = MapsFragment.class.getSimpleName();
@@ -177,18 +180,26 @@ public class MapsFragment extends Fragment  {
 
 //       loquesea();
 
-        binding.openBottomSheet.setOnClickListener(
-                new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v)
-                    {
-                        AppInfoFragment appInfoFragment= new AppInfoFragment();
-                        (getActivity()).getSupportFragmentManager().beginTransaction()
-                                    .replace(R.id.appInfoFragment, appInfoFragment, "")
-                  .addToBackStack(null)
-                            .commit();
-                    }
-                });
+
+        navController = Navigation.findNavController(view);
+
+        Banner.make(view,getContext(),Banner.WARNING,"No te acerques a los marcadores rojos! Son Positivos y corres el riesgo de contagio.",Banner.TOP).show();
+
+
+        binding.refresh.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navController.navigate(R.id.mapsFragment);
+            }
+        });
+
+        binding.help.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navController.navigate(R.id.appInfoFragment);
+            }
+        });
+
 
 
         SupportMapFragment mapFragment =

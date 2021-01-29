@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:layout_centerInParent="true"
-        android:paddingTop="25dp"
+        android:paddingTop="50dp"
         android:orientation="vertical" >
 
         <EditText
@@ -42,12 +42,6 @@
             android:hint="Bio" />
 
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="15dp"
-            android:src="@drawable/topline"/>
-
         <Spinner
             android:id="@+id/customIconSpinner"
             android:layout_width="match_parent"
@@ -70,7 +64,7 @@
             android:id="@+id/registrar"
             android:layout_width="150dp"
             android:layout_height="39dp"
-            android:text="Iniciar Sesion"
+            android:text="Registrarse"
             android:textAllCaps="true"
             android:textColor="@color/dark"
             android:textSize="14dp"
@@ -80,8 +74,6 @@
             app:sub_btn_line_color="@color/dark"
             app:sub_btn_ripple_color="#5BD550"
             app:sub_btn_tick_color="@color/white" />
-
-
     </LinearLayout>
 
 </RelativeLayout>

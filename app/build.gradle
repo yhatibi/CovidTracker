@@ -35,6 +35,9 @@ repositories {
     maven {
         url 'https://dl.bintray.com/spark/maven'
     }
+    maven { url 'https://jitpack.io'
+    }
+
 }
 
 dependencies {
@@ -58,6 +61,8 @@ dependencies {
     implementation 'com.ramotion.foldingcell:folding-cell:1.2.3'
     implementation 'com.daimajia.easing:library:2.4@aar'
     compile 'com.tuyenmonkey:mkloader:1.4.0'
+    compile 'com.github.shasin89:NotificationBanner:1.1.0'
+    implementation 'com.github.florent37:expansionpanel:1.2.4'
 
 
 
